@@ -66,6 +66,12 @@ public class Conditions
         }
         
         /*
+		 * !!! INSTRUCTOR NOTE: peer instruction questions about the above
+		 *		and the below code (without comment).
+		 */
+        
+        
+        /*
          * { } are not required for a single statement.
          *      However, they are always a good idea.
          *      Leaving them out can lead to bugs like this:
@@ -169,6 +175,12 @@ public class Conditions
             System.out.println("strings are equal");
         }
         
+        
+        /*
+		 * !!! INSTRUCTOR NOTE: peer instruction questions about the above
+		 */
+	 
+	         
         /*
          * This is an example of a "short circuit".
          * 
@@ -198,5 +210,124 @@ public class Conditions
         String flavor = s.next();
         System.out.println("Favorite ice cream flavor: " + flavor);
 
+
+        /*
+		 * !!! INSTRUCTOR NOTE: peer instruction questions about the above
+		 */
+
+
+    }
+    
+    public static String getStudentClass(int gradeNumber)
+    {
+        /*
+         * switch statement
+         * 
+         *  This is another conditional decision statement (like an if statement). It is preferred
+         *      when evaluating several *discrete* values. It supports byte, short, char, and int
+         *      primitive types. It also supports enumerations and String objects.
+         *      
+         *  The condition is evaluated and then the flow of execution jumps to the case that matches.
+         */
+        String studentClass = "";
+        
+        switch(gradeNumber)
+        {
+            case 9:
+            {
+                studentClass = "freshman";
+             
+                /*
+                 * break causes the flow of execution to leave the switch. Without a break, the
+                 *      flow of execution continues into the next case.
+                 */
+                break;
+            }
+            
+            case 10:
+            {
+                studentClass = "sophomore";
+                break;
+            }
+            
+            case 11:
+            {
+                studentClass = "junior";
+                break;
+            }
+            
+            case 12:
+            {
+                studentClass = "senior";
+                break;
+            }
+            
+            /*
+             * By leaving out the break, multiple cases can run the same code.
+             */
+            case 6:
+            case 7:
+            case 8:
+            {
+                studentClass = "junior high";
+                break;
+            }
+            
+            /*
+             * default matches everything not matched by one of the cases
+             */
+            default:
+            {
+                studentClass = "elementary";
+                break;
     }
 }
+        
+        return studentClass;
+    }
+    
+    public static void extraOperatorsExample()
+    {
+        /*
+         * augmented assignment operators: +=, -=, *=, /=,  %=
+         * 
+         *  These are the same as in Python.
+         *  Perform the specified mathematical operation to the variable and then assign the
+         *      resulting value to the same variable.
+         */
+        int x = 7;
+        int y = 7;
+        int z = 7;
+        
+        x = x + 1;
+        y += 1;
+        z++;
+        
+        System.out.println("x = " + x + "; y = " + y + "; z = " + z);
+        
+        /*
+         * post increment/decrement operators (++/--)
+         * 
+         *  These are equivalent to adding/subtracting 1 to/from the variable.
+         *  These return the value before performing the increment/decrement.
+         */
+        int a = 7;
+        int b = a++;
+        System.out.println("a = " + a + "; b = " + b);  // a = 8; b = 7
+        
+        /*
+         * pre increment/decrement operators (++/--)
+         * 
+         *  These return the value after performing the increment/decrement.
+         */
+        int c = 7;
+        int d = ++c;
+        System.out.println("c = " + c + "; d = " + d);  // c = 8; d = 8
+    }
+}
+
+
+
+
+
+
